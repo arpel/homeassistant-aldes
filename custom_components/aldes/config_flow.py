@@ -58,11 +58,10 @@ class AldesFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
                 user_input[CONF_USERNAME], user_input[CONF_PASSWORD]
             )
             if valid:
-                return self.async_create_entry(
-                    title=user_input[CONF_USERNAME], data=user_input
+                return self.async_update_reload_and_abort(
+                    self._get_reconfigure_entry(),
+                    data_updates=user_input,
                 )
-            self._errors["base"] = "auth"
-            return await self._show_config_form(user_input)
 
         return self.async_show_form(
             step_id="reconfigure",
