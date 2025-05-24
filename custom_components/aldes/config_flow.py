@@ -63,12 +63,14 @@ class AldesFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
                     data_updates=user_input,
                 )
 
+            self._errors["base"] = "auth"
+
         return self.async_show_form(
             step_id="reconfigure",
             data_schema=vol.Schema(
                  {
-                     vol.Required(CONF_USERNAME, default=user_input[CONF_USERNAME]): str,
-                     vol.Required(CONF_PASSWORD, default=user_input[CONF_PASSWORD]): str,
+                     vol.Required(CONF_USERNAME): str,
+                     vol.Required(CONF_PASSWORD): str,
                  }
              ),
              errors=self._errors,
