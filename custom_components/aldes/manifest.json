@@ -1,12 +1,13 @@
 {
     "domain": "aldes",
     "name": "Aldes",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "integration_type": "hub",
-    "documentation": "https://github.com/guix77/homeassistant-aldes",
-    "issue_tracker": "https://github.com/guix77/homeassistant-aldes/issues",
+    "documentation": "https://github.com/arpel/homeassistant-aldes",
+    "issue_tracker": "https://github.com/arpel/homeassistant-aldes/issues",
     "codeowners": [
-      "@guix77"
+      "@guix77",
+      "@arpel"
     ],
     "config_flow": true,
     "iot_class": "cloud_polling"
